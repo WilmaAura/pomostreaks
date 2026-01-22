@@ -16,7 +16,13 @@ function App() {
     return () => clearInterval(timer);
   }, [isRunning, timeLeft]);
 
-  const formatTime = (seconds: number): string => {};
+  const formatTime = (seconds: number): string => {
+    const m = Math.floor(seconds / 60)
+      .toString()
+      .padStart(2, "0");
+    const s = (seconds % 60).toString().padStart(2, "0");
+    return `${m}:${s}`;
+  };
   return (
     <div style={{ position: "relative" }}>
       <div>
