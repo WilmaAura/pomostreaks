@@ -23,6 +23,15 @@ function App() {
     const s = (seconds % 60).toString().padStart(2, "0");
     return `${m}:${s}`;
   };
+
+  const handleClick = () => {
+    if (isRunning) {
+      setIsRunning(true);
+    } else {
+      setIsRunning(false);
+      siteTimeLeft(25 * 60);
+    }
+  };
   return (
     <div style={{ position: "relative" }}>
       <div>
